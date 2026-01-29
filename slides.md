@@ -639,6 +639,22 @@ static void LoadInternal(ExtensionLoader &loader) {
 
 ---
 
+# Update to step-3
+
+If you're following along, update to the `step-3` `git` tag and build.
+
+```sh
+GEN=ninja make debug
+./build/debug/duckdb
+```
+
+```sql
+.mode line
+SELECT * from duckdb_functions where function_name = 'easter';
+```
+
+---
+
 # Testing `easter()`
 
 ```sql [workshop.test]{5-9|11-12|14-18}{lines:true,startLine:1}
@@ -748,6 +764,18 @@ We are going to need to use `bind` and `global_init` callbacks so that DuckDB kn
 
 ---
 
+
+# Update to step-4
+
+If you're following along, update to the `step-4` `git` tag and build.
+
+```sh
+GEN=ninja make debug
+./build/debug/duckdb
+```
+
+---
+
 # Table Function Example
 We're going to re-implement `range()` called `incremental_sequence()`.
 
@@ -770,17 +798,6 @@ SELECT * from incremental_sequence(100, 110);
 ├────────────────┤
 │    10 rows     │
 └────────────────┘
-```
-
----
-
-# Update to step-3
-
-If you're following along, update to the `step-3` `git` tag and build.
-
-```sh
-GEN=ninja make debug
-./build/debug/duckdb
 ```
 
 ---
